@@ -26,7 +26,8 @@
 
 첫번째로, `composer.json` 파일에 캐쉬어 패키지를 추가합니다:
 
-    "laravel/cashier": "~3.0"
+    "laravel/cashier": "~4.0" (스트라이프 API의 버전이 2015-02-18 또는 그 이후)
+    "laravel/cashier": "~3.0" (스트라이프 API의 버전이 2015-02-16 또는 그 이전)
 
 #### 서비스 프로바이더
 
@@ -53,7 +54,14 @@
 
 #### 스트라이프 키
 
-마지막으로, 부트스트랩 파일 또는 `AppServiceProvider`같은 서비스 프로바이더 중 한곳에 스트라이프 키를 설정합니다:
+마지막으로, `services.php` 설정 파일에 여러분의 스트라이프 키를 저장합니다.
+
+    'stripe' => [
+        'model'  => 'User',
+        'secret' => env('STRIPE_API_SECRET'),
+    ],
+
+또한 다른 방법으로는 키를 부트스트랩 파일 또는 `AppServiceProvider` 같은 서비스 프로바이더에 저장해도 됩니다.
 
     User::setStripeKey('stripe-key');
 
