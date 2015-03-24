@@ -37,7 +37,7 @@ Laravel 프레임워크의 모든 구성 파일은 `config` 디렉토리에 있�
 <a name="permissions"></a>
 ### 퍼미션
 
-라라벨은 한 세트의 퍼미션이 구성되도록 요구합니다: `storage` 내에 있는 폴더들은 웹 서버에 의해 쓰기 액세스가 요구 됩니다.
+라라벨은 한 세트의 퍼미션이 구성되도록 요구합니다: `storage`과 `vendor` 내에 있는 폴더들은 웹 서버에 의해 쓰기 액세스가 요구 됩니다.
 
 <a name="accessing-configuration-values"></a>
 ## 구성 값 액세스
@@ -134,6 +134,8 @@ Laravel 프레임워크의 모든 구성 파일은 `config` 디렉토리에 있�
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+만약 여러분의 웹 호스트가 `FollowSymlinks` 옵션을 허용하지 않는다면, `Options +SymLinksIfOwnerMatch` 옵션을 대신 사용해보세요.
 
 ### Nginx
 
