@@ -50,6 +50,10 @@
 
 `VALUE_IS_ARRAY` 모드는 커맨드를 호출할 때 해당 스위치가 여러번 사용 될 수 있음을 나타냅니다:
 
+    InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY
+
+위의 모드는 다음의 커맨드를 허용합니다:
+
     php artisan foo --option=bar --option=baz
 
 `VALUE_NONE` 옵션은 해당 옵션 자체가 간단하게 "스위치"로 사용 될 수 있음을 나타냅니다:
