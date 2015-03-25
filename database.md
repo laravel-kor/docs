@@ -50,6 +50,10 @@
 
 `select` 메서드는 항상 `array`를 결과로 반환합니다.
 
+또한 이름이 지정된 바인딩을 사용하여 쿼리를 실행 할 수도 있습니다:
+
+    $results = DB::select('select * from users where id = :id', ['id' => 1]);
+
 #### Insert 구문 실행
 
     DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle']);
