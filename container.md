@@ -18,7 +18,7 @@
     <?php namespace App\Handlers\Commands;
 
     use App\User;
-    use App\Commands\PurchasePodcast;
+    use App\Commands\PurchasePodcastCommand;
     use Illuminate\Contracts\Mail\Mailer;
 
     class PurchasePodcastHandler {
