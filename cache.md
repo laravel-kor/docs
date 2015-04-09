@@ -6,6 +6,8 @@
 - [캐시 태그](#cache-tags)
 - [캐시 이벤트](#cache-events)
 - [데이터베이스 캐시](#database-cache)
+- [Memcached 캐시](#memcached-cache)
+- [Redis 캐시](#redis-cache)
 
 <a name="configuration"></a>
 ## 설정
@@ -170,3 +172,25 @@ Redis 캐쉬를 라라벨과 사용하려면, 컴포저를 통하여 `predis/pre
         $t->text('value');
         $t->integer('expiration');
     });
+
+<a name="memcached-cache"></a>
+#### Memcached 캐시
+
+Memcached 캐시를 사용하려면 [Memcached PECL 패키지](http://pecl.php.net/package/memcached)가 설치되어 있어야 합니다.
+
+기본 [구성](#configuration)은 [Memcached::addServer](http://php.net/manual/en/memcached.addserver.php)의 TCP/IP를 사용합니다:
+
+    'memcached' => array(
+        array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 100),
+    ),
+
+여러분은 또한 UNIX 소켓 경로에 `host` 옵션을 설정 할 수도 있습니다. 이렇게 사용 하려면, `port` 옵션은 `0`으로 설정 되어야 합니다:
+
+    'memcached' => array(
+        array('host' => '/var/run/memcached/memcached.sock', 'port' => 0, 'weight' => 100),
+    ),
+
+<a name="redis-cache"></a>
+#### Redis 케시
+
+[Redis 구성](/docs/redis#configuration)을 보세요.
