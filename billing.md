@@ -10,7 +10,7 @@
 - [구독 취소](#cancelling-a-subscription)
 - [구독 재개](#resuming-a-subscription)
 - [구독 상태 확인](#checking-subscription-status)
-- [실패한 결제 처리](#handling-failed-payments)
+- [실패한 구독 처리](#handling-failed-subscription)
 - [다른 스트라이프 웹후크 처리](#handling-other-stripe-webhooks)
 - [청구서](#invoices)
 
@@ -237,14 +237,14 @@
         //
     }
 
-<a name="handling-failed-payments"></a>
-## 실패한 결제 처리
+<a name="handling-failed-subscription"></a>
+## 실패한 구독 처리
 
 만약 사용자의 신용카드가 만료 된다면? 걱정마세요 - 캐쉬어는 사용자의 구독을 쉽게 취소할 수 있는 웹후크 컨트롤러를 포함하고 있습니다. 라우트를 웹후크 컨트롤러로 가르키기만 하세요:
 
     Route::post('stripe/webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
 
-끝입니다! 실패한 결제는 캡쳐되고 컨트롤러에 의해 처리됩니다. 컨트롤러는 결제가 3번 실패 할 경우, 사용자의 구독을 취소시킵니다. 이 예제에 있는 `stripe/webhook` URI는 예제일 뿐입니다. 스트라이프 설정에서 해당 URI를 직접 설정해야 합니다.
+끝입니다! 실패한 결제는 캡쳐되고 컨트롤러에 의해 처리됩니다. 컨트롤러는 스트라이프가 구독이 실패되었다고 결정했을 때(보통 3번 결제에 실패 할 경우) 사용자의 구독을 취소시킵니다. 이 예제에 있는 `stripe/webhook` URI는 예제일 뿐입니다. 스트라이프 설정에서 해당 URI를 직접 설정해야 합니다.
 
 <a name="handling-other-stripe-webhooks"></a>
 ## 다른 종류의 스트라이프 웹후크 처리
