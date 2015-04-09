@@ -134,6 +134,14 @@
     $schedule->command('foo')->saturdays();
     $schedule->command('foo')->sundays();
 
+#### 작업이 겹치는 것을 방지
+
+기본적으로, 스케쥴된 작업들은 이전의 작업 인스턴스가 계속 실행중인 상태라도 실행됩니다. 이를 방지하려면, `withoutOverlapping` 메서드를 사용합니다:
+
+    $schedule->command('foo')->withoutOverlapping();
+
+이 예제에서, `foo` 커맨드는 이미 실행되어 있지 않을 경우에만 매분마다 실행됩니다.
+
 #### 작업이 실행되는 환경을 제한
 
     $schedule->command('foo')->monthly()->environments('production');
