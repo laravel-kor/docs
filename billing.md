@@ -26,6 +26,7 @@
 
 첫번째로, `composer.json` 파일에 캐쉬어 패키지를 추가합니다:
 
+    "laravel/cashier": "~5.0" (스트라이프 SDK ~2.0, 그리고 스트라이프 API의 버전이 2015-02-18 또는 그 이후)
     "laravel/cashier": "~4.0" (스트라이프 API의 버전이 2015-02-18 또는 그 이후)
     "laravel/cashier": "~3.0" (스트라이프 API의 버전이 2015-02-16 또는 그 이전)
 
@@ -44,7 +45,7 @@
     use Laravel\Cashier\Billable;
     use Laravel\Cashier\Contracts\Billable as BillableContract;
 
-    class User extends Eloquent implements BillableContract {
+    class User extends Model implements BillableContract {
 
         use Billable;
 
