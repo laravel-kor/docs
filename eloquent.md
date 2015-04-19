@@ -1135,9 +1135,16 @@ Many-to-many 관계를 작업 할때, 관련 모델들을 삽입 해야 할 수�
         return $role->created_at;
     });
 
+    $roles = $roles->sortByDesc(function($role)
+    {
+        return $role->created_at;
+    });
+
 #### 콜렉션 값을 기준으로 정렬
 
     $roles = $roles->sortBy('created_at');
+
+    $roles = $roles->sortByDesc('created_at');
 
 #### 사용자 정의 콜렉션 타입 반환
 
