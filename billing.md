@@ -7,6 +7,7 @@
 - [신용카드 사전정보 없이 가입](#no-card-up-front)
 - [구독 변경](#swapping-subscriptions)
 - [구독 수량](#subscription-quantity)
+- [구독 세금](#subscription-tax)
 - [구독 취소](#cancelling-a-subscription)
 - [구독 재개](#resuming-a-subscription)
 - [구독 상태 확인](#checking-subscription-status)
@@ -162,6 +163,18 @@
 
     // 현재 구독 수량에 5개 감소
     $user->subscription()->decrement(5);
+
+<a name="subscription-tax"></a>
+## 구독 세금
+
+캐쉬어와 함께, 스트라이프로 전송하는 `tax_percent` 값을 재정의 하는 방법은 간단합니다. 구독할때 사용자 결제의 세금 비율을 명시하려면, 여러분의 모델에 `getTaxPercent` 메서드를 구현하고, 소수점 자리가 2자리를 넘지 않는 0 과 100 사이의 숫자 값을 반환합니다.
+
+    public function getTaxPercent()
+    {
+        return 20;
+    }
+
+이는 모델별로 세금 비율을 적용 할 수 있도록 하여 여러 국가에 걸쳐있는 사용자 기반에 도움이 될 수 있습니다.
 
 <a name="cancelling-a-subscription"></a>
 ## 구독 취소
