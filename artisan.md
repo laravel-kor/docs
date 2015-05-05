@@ -170,3 +170,7 @@
 #### 작업이 실행된 후, 주어진 URL로 핑
 
     $schedule->command('foo')->thenPing($url);
+
+`thenPing($url)` 기능을 사용하려면 Guzzle HTTP 라이브러리가 필요합니다. 다음의 라인을 `composer.json` 파일에 추가하여 Guzzle 5를 여러분의 프로젝트에 추가 할 수 있습니다:
+
+    "guzzlehttp/guzzle": "~5.0"
