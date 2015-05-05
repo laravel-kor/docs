@@ -20,7 +20,7 @@
 
     php artisan make:console FooCommand
 
-위의 커맨드는 `app/Console/FooCommand.php`에 클래스를 생성합니다.
+위의 커맨드는 `app/Console/Commands/FooCommand.php`에 클래스를 생성합니다.
 
 커맨드를 생성할 때, `--command` 옵션은 터미널 커맨드명을 부여할때 사용됩니다:
 
