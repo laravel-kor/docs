@@ -48,7 +48,7 @@
 <a name="security-vulnerabilities"></a>
 ## 보안 취약점
 
-만약 라라벨에서 보안 취약점을 발견했다면, <a href="mailto:taylorotwell@gmail.com">taylorotwell@gmail.com</a>로 Taylor Otwell에게 이메일을 보내세요. 모든 보안 취약점은 신속하게 해결 될 것입니다.
+만약 라라벨에서 보안 취약점을 발견했다면, <a href="mailto:taylor@laravel.com">taylor@laravel.com</a>로 Taylor Otwell에게 이메일을 보내세요. 모든 보안 취약점은 신속하게 해결 될 것입니다.
 
 <a name="coding-style"></a>
 ## 코딩 스타일
