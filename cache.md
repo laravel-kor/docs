@@ -93,7 +93,7 @@ Redis 캐쉬를 라라벨과 사용하려면, 컴포저를 통하여 `predis/pre
 <a name="increments-and-decrements"></a>
 ## 증가 & 감소
 
-`file`과 `database`를 제외한 모든 드라이버는 `증가`와 `감소` 연산을 제공합니다:
+`database`를 제외한 모든 드라이버가 `증가`와 `감소` 연산을 제공합니다:
 
 #### 값을 증가
 
