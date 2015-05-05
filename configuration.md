@@ -30,7 +30,7 @@ Laravel 프레임워크의 모든 구성 파일은 `config` 디렉토리에 있�
 
 라라벨은 기본적으로 아주 약간의 설정을 필요로 합니다. 여러분은 바로 개발을 시작해도 좋습니다! 하지만, `config/app.php` 파일과 문서를 한번 훑어보세요. 저 파일은 여러분의 위치를 기반으로 변경해야할 `timezone`과 `locale` 같은 몇몇개의 옵션을 포함하고 있습니다..
 
-라라벨이 설치되고 나면, 여러분은 [로컬 환경을 구성]configure your local environment](/docs/5.0/configuration#environment-configuration)해야 합니다.
+라라벨이 설치되고 나면, 여러분은 [로컬 환경을 구성]configure your local environment](/docs/{{version}}/configuration#environment-configuration)해야 합니다.
 
 > **주의:** 여러분은 프로덕션 어플리케이션에서 절대로 `app.debug` 구성 옵션을 `true`로 설정 해서는 안됩니다.
 
@@ -83,7 +83,7 @@ Laravel 프레임워크의 모든 구성 파일은 `config` 디렉토리에 있�
         // local 또는 staging 환경
     }
 
-어플리케이션의 인스턴스를 얻으려면, [서비스 컨테이너](/docs/5.0/container)를 통해 `Illuminate\Contracts\Foundation\Application` 계약(Contract)을 해결(resolve) 합니다. 물론, 여러분이 [서비스 프로바이더](/docs/5.0/providers)내에 있다면, 어플리케이션 인스턴스는 `$this->app` 인스턴스 변수를 통해 사용 가능 합니다.
+어플리케이션의 인스턴스를 얻으려면, [서비스 컨테이너](/docs/{{version}}/container)를 통해 `Illuminate\Contracts\Foundation\Application` 계약(Contract)을 해결(resolve) 합니다. 물론, 여러분이 [서비스 프로바이더](/docs/{{version}}/providers)내에 있다면, 어플리케이션 인스턴스는 `$this->app` 인스턴스 변수를 통해 사용 가능 합니다.
 
 어플리케이션 인스턴스는 `app` 헬퍼 또는 `App` 파사드를 통해서도 엑세스 될 수 있습니다:
 
@@ -117,7 +117,7 @@ Laravel 프레임워크의 모든 구성 파일은 `config` 디렉토리에 있�
 
 ### 점검 모드 & 큐
 
-어플리케이션이 점검 모드 일 때는, [큐 작업](/docs/5.0/queues)도 마찬가지로 처리되지 않습니다. 큐 작업들은 어플리케이션이 점검 모드에서 빠져 나올 경우 평소처럼 계속해서 처리 됩니다.
+어플리케이션이 점검 모드 일 때는, [큐 작업](/docs/{{version}}/queues)도 마찬가지로 처리되지 않습니다. 큐 작업들은 어플리케이션이 점검 모드에서 빠져 나올 경우 평소처럼 계속해서 처리 됩니다.
 
 <a name="pretty-urls"></a>
 ## Pretty URLs
@@ -145,4 +145,4 @@ Nginx에서는, 여러분의 사이트 구성에서 아래의 디렉티브가 "p
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-물론, [Homestead](/docs/5.0/homestead)를 사용 할땐, pretty URL이 자동으로 설정됩니다.
+물론, [Homestead](/docs/{{version}}/homestead)를 사용 할땐, pretty URL이 자동으로 설정됩니다.

@@ -204,7 +204,7 @@
         //
     }
 
-`subscribed` 메서드는 [라우트 미들웨어](/docs/5.0/middleware)에 사용될수 있는 매우 좋은 방법중 하나입니다:
+`subscribed` 메서드는 [라우트 미들웨어](/docs/{{version}}/middleware)에 사용될수 있는 매우 좋은 방법중 하나입니다:
 
     public function handle($request, Closure $next)
     {

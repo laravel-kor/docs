@@ -31,7 +31,7 @@
 
     $collection = Collection::make([1, 2, 3]);
 
-물론 [엘로퀀트](/docs/5.0/eloquent) 객체의 컬렉션은 항상 `Collection` 인스턴스로 반환됩니다. 그러나, 여러분의 어플리케이션의 어디에서든지 `Collection` 클래스를 자유롭게 사용해도 좋습니다.
+물론 [엘로퀀트](/docs/{{version}}/eloquent) 객체의 컬렉션은 항상 `Collection` 인스턴스로 반환됩니다. 그러나, 여러분의 어플리케이션의 어디에서든지 `Collection` 클래스를 자유롭게 사용해도 좋습니다.
 
 #### 컬렉션 탐색
 

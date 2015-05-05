@@ -132,4 +132,4 @@
         'App\Console\Commands\FooCommand'
     ];
 
-아티즌이 부팅할 때, 이 속성에 나열된 모든 커맨드들은 [서비스 컨테이너](/docs/5.0/container)에 의해 해결되고 아티즌에 등록됩니다.
+아티즌이 부팅할 때, 이 속성에 나열된 모든 커맨드들은 [서비스 컨테이너](/docs/{{version}}/container)에 의해 해결되고 아티즌에 등록됩니다.

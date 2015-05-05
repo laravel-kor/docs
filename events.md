@@ -71,7 +71,7 @@
 <a name="queued-event-handlers"></a>
 ## 대기중인 이벤트 핸들러
 
-이벤트 핸들러를 [대기(queue)](/docs/5.0/queues) 시켜야 하나요? 이보다 더 쉬울수 없습니다. 핸들러를 생성할때, 간단히 `--queued` 플래그를 사용하세요:
+이벤트 핸들러를 [대기(queue)](/docs/{{version}}/queues) 시켜야 하나요? 이보다 더 쉬울수 없습니다. 핸들러를 생성할때, 간단히 `--queued` 플래그를 사용하세요:
 
     php artisan handler:event SendPurchaseConfirmation --event=PodcastWasPurchased --queued
 
@@ -137,7 +137,7 @@
 
     Event::subscribe($subscriber);
 
-여러분은 또한 구독을 해결(resolve)하기위해 [서비스 컨테이너](/docs/5.0/container)를 사용 할 수도 있습니다. 이렇게 하려면, 간단하게 `subscribe` 메서드에 구독자 글래스 명을 전달하세요:
+여러분은 또한 구독을 해결(resolve)하기위해 [서비스 컨테이너](/docs/{{version}}/container)를 사용 할 수도 있습니다. 이렇게 하려면, 간단하게 `subscribe` 메서드에 구독자 글래스 명을 전달하세요:
 
     Event::subscribe('UserEventHandler');
 

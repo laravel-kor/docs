@@ -132,7 +132,7 @@
 
     $user = User::on('connection-name')->find(1);
 
-만약 [읽기 / 쓰기 연결](/docs/5.0/database#read-write-connections)을 사용하고 있다면, 다음의 메서드와 함께 쿼리가 강제로 "쓰기" 연결을 사용하도록 할 수도 있습니다:
+만약 [읽기 / 쓰기 연결](/docs/{{version}}/database#read-write-connections)을 사용하고 있다면, 다음의 메서드와 함께 쿼리가 강제로 "쓰기" 연결을 사용하도록 할 수도 있습니다:
 
     $user = User::onWriteConnection()->find(1);
 

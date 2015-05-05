@@ -76,7 +76,7 @@
 <a name="controller-middleware"></a>
 ## 컨트롤러 미들웨어
 
-[미들웨어](/docs/5.0/middleware)는 아래와 같이 컨트롤러 라우트에 명시 될 수 있습니다:
+[미들웨어](/docs/{{version}}/middleware)는 아래와 같이 컨트롤러 라우트에 명시 될 수 있습니다:
 
     Route::get('profile', [
         'middleware' => 'auth',
@@ -220,7 +220,7 @@ DELETE    | /photo/{photo}        | destroy      | photo.destroy
 
 #### 생성자 주입
 
-라라벨 [서비스 컨테이너](/docs/5.0/container)는 모든 라라벨 컨트롤러들을 해결하는데 사용됩니다. 결과적으로, 여러분은 컨트롤러가 필요로 하는 어떠한 의존성들이라도 생성자에 타입-힌트 할 수 있습니다:
+라라벨 [서비스 컨테이너](/docs/{{version}}/container)는 모든 라라벨 컨트롤러들을 해결하는데 사용됩니다. 결과적으로, 여러분은 컨트롤러가 필요로 하는 어떠한 의존성들이라도 생성자에 타입-힌트 할 수 있습니다:
 
     <?php namespace App\Http\Controllers;
 
@@ -247,7 +247,7 @@ DELETE    | /photo/{photo}        | destroy      | photo.destroy
 
     }
 
-물론, 여러분은 아무 [라라벨 계약](/docs/5.0/contracts)들도 타입-힌트 할 수 있습니다. 만약 컨테이너가 무엇인가를 해결할 수 있다면, 여러분은 그것을 타입-힌트 할 수 있습니다.
+물론, 여러분은 아무 [라라벨 계약](/docs/{{version}}/contracts)들도 타입-힌트 할 수 있습니다. 만약 컨테이너가 무엇인가를 해결할 수 있다면, 여러분은 그것을 타입-힌트 할 수 있습니다.
 
 #### 메서드 주입
 
@@ -298,7 +298,7 @@ DELETE    | /photo/{photo}        | destroy      | photo.destroy
 
     }
 
-> **주의:** 메서드 주입은 [모델 바인딩](/docs/5.0/routing#route-model-binding)과 완벽하게 호환됩니다. 컨테이너는 어떤 인수들이 모델에 바인딩 되어야하고 어떤 인수들이 주입되어야 하는지 지능적으로 결정합니다.
+> **주의:** 메서드 주입은 [모델 바인딩](/docs/{{version}}/routing#route-model-binding)과 완벽하게 호환됩니다. 컨테이너는 어떤 인수들이 모델에 바인딩 되어야하고 어떤 인수들이 주입되어야 하는지 지능적으로 결정합니다.
 
 <a name="route-caching"></a>
 ## 라우트 캐싱

@@ -58,7 +58,7 @@
 
     }
 
-`attempt` 메서드는 첫번째 인수로 키 / 값의 쌍으로 이루어진 배열을 받습니다. `password` 값은 [해시화](/docs/5.0/hashing)됩니다. 배열의 다른 값들은 데이터베이스 테이블에서 사용자를 찾는데 사용됩니다. 그러므로 위의 예제에서, 사용자는 `email` 컬럼의 값에 의해 조회가 됩니다. 만약 유저가 검색되었다면, 데이터베이스에 저장되어있는 해시화된 비밀번호가 배열을 통해 메서드로 전달된 해시화된 `password` 값가 비교 됩니다. 만약 두개의 해시화된 비밀번호가 일치 한다면, 사용자에게 인증된 세션이 새롭게 시작됩니다.
+`attempt` 메서드는 첫번째 인수로 키 / 값의 쌍으로 이루어진 배열을 받습니다. `password` 값은 [해시화](/docs/{{version}}/hashing)됩니다. 배열의 다른 값들은 데이터베이스 테이블에서 사용자를 찾는데 사용됩니다. 그러므로 위의 예제에서, 사용자는 `email` 컬럼의 값에 의해 조회가 됩니다. 만약 유저가 검색되었다면, 데이터베이스에 저장되어있는 해시화된 비밀번호가 배열을 통해 메서드로 전달된 해시화된 `password` 값가 비교 됩니다. 만약 두개의 해시화된 비밀번호가 일치 한다면, 사용자에게 인증된 세션이 새롭게 시작됩니다.
 
 `attempt` 메서드는 만약 인증에 성공 했을 경우 `true`를 리턴하고 그렇지 않을 경우 `false`를 리턴합니다.
 
@@ -140,7 +140,7 @@
 
 #### 인증 이벤트
 
-`attempt` 메서드가 호출되면, `auth.attempt` [이벤트](/docs/5.0/events)가 트리거됩니다. 만약 인증 시도가 성공적이고 사용자가 로그인 되었다면, `auth.login` 이벤트 또한 트리거 됩니다.
+`attempt` 메서드가 호출되면, `auth.attempt` [이벤트](/docs/{{version}}/events)가 트리거됩니다. 만약 인증 시도가 성공적이고 사용자가 로그인 되었다면, `auth.login` 이벤트 또한 트리거 됩니다.
 
 <a name="retrieving-the-authenticated-user"></a>
 ## 인증된 사용자 조회
@@ -194,7 +194,7 @@
 
     }
 
-새번째로, `Illuminate\Contracts\Auth\Authenticatable` contract를 타입-힌트로 할 수 있습니다. 이 타입-힌트는 컨트롤러 생성자, 컨트롤러 메서드, 또는 [서비스 컨테이너](/docs/5.0/container)에 의해 결정 되는 다른 클래스의 생성자에 추가 될 수 있습니다:
+새번째로, `Illuminate\Contracts\Auth\Authenticatable` contract를 타입-힌트로 할 수 있습니다. 이 타입-힌트는 컨트롤러 생성자, 컨트롤러 메서드, 또는 [서비스 컨테이너](/docs/{{version}}/container)에 의해 결정 되는 다른 클래스의 생성자에 추가 될 수 있습니다:
 
     <?php namespace App\Http\Controllers;
 
@@ -218,7 +218,7 @@
 <a name="protecting-routes"></a>
 ## 라우트 보호
 
-[라우트 미들웨어](/docs/5.0/middleware)는 주어진 라우트에 인증된 사용자들만 액세스가 가능하도록 하는데 사용될 수 있습니다. 라라벨은 `auth` 미들웨어를 기본으로 제공하며, `app\Http\Middleware\Authenticate.php`에 정의되어 있습니다. 여러분이 해야할 일은 이 미들웨어를 라우트의 정의에 포함시키기만 하면 됩니다.
+[라우트 미들웨어](/docs/{{version}}/middleware)는 주어진 라우트에 인증된 사용자들만 액세스가 가능하도록 하는데 사용될 수 있습니다. 라라벨은 `auth` 미들웨어를 기본으로 제공하며, `app\Http\Middleware\Authenticate.php`에 정의되어 있습니다. 여러분이 해야할 일은 이 미들웨어를 라우트의 정의에 포함시키기만 하면 됩니다.
 
     // 라우트 클로저에 포함
 
@@ -247,7 +247,7 @@ HTTP 기본 인증은 "로그인" 전용 페이지 설정없이 사용자를 인
 
 #### 무상태 기본 인증 필터 설정
 
-또한, 특히 API 인증에 유용한 방법인, 세션에 사용자의 식별 쿠키 설정 없이 HTTP 기본 인증을 사용하길 원할 수도 있습니다. 이렇게 하려면, `onceBasic` 메서드를 호출하는 [미들웨어](/docs/5.0/middleware)를 정의 하세요:
+또한, 특히 API 인증에 유용한 방법인, 세션에 사용자의 식별 쿠키 설정 없이 HTTP 기본 인증을 사용하길 원할 수도 있습니다. 이렇게 하려면, `onceBasic` 메서드를 호출하는 [미들웨어](/docs/{{version}}/middleware)를 정의 하세요:
 
     public function handle($request, Closure $next)
     {
@@ -293,7 +293,7 @@ PHP FastCGI 사용한다면, HTTP 기본 인증이 기본적으로 정상 동작
 
     "laravel/socialite": "~2.0"
 
-다음으로 `config/app.php` 설정 파일에 `Laravel\Socialite\SocialiteServiceProvider` 서비스 제공자를 등록하세요. [파사드](/docs/5.0/facades) 또한 등록 할 수 있습니다:
+다음으로 `config/app.php` 설정 파일에 `Laravel\Socialite\SocialiteServiceProvider` 서비스 제공자를 등록하세요. [파사드](/docs/{{version}}/facades) 또한 등록 할 수 있습니다:
 
     'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 
